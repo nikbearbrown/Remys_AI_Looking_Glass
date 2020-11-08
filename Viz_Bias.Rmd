@@ -22,6 +22,10 @@ After tweeting in support of my favorite politician, Dwayne Elizondo Mountain De
 Worst of all I was accussed of being biased and unfair, as I asseted they were. We got into an argument about who is more biased. Rather than argue, I decided to investigate. To accomplish this I want to build an AI looking glass which allow people to visualize bias in writing, in particular in Tweets. The AI looking glass can also be used as a mirror to look at one’s own bias.  
 
 
+![Git](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/master/images/Tesla_MacBook_Remy.png)
+
+
+
 ## Rembrandt X Einstein, Remy
 
 By the way, my name is Rembrandt X Einstein, or Remy as my friends call me. I am an AI researcher and professor at the Smarty Pants Instutite. I build predictive models using AI all of the time but sometimes wonder if the predictions they make unfairly affect people. I also wonder what my own biases are. It is time to use math to find out. 
