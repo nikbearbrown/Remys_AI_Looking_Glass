@@ -44,29 +44,77 @@ This leds to one possible mathematical definition of bias.
 
 The above reads the probability of y-hat is the same if the inputs are the same.  This is a common sense notion, that is there is no bias when the given the same input one gets the same result.
 
+We will continue to come back to this idea the outcome being different when the relevant input is the same as we continue to refine our exploration of bias and fairness.
+
+![Same Content with a Different Response indicates Bias](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Same_Content_Different_Response_Bias.png)
 
 
-## Can Math Detect Bias?
+## Can We Visualize Bias?
 
-Let's start with a sim
+If our notion of bias is disparate outcomes the one should be able to visualize bias. One just needs visualizations that show disparate outcomes in the data.  
 
 ![PhD Bias](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/PhD_Viz-Bias.png)
 
-## Rembrandt X Einstein, Remy
+The graphic above shows that those who self-indentify as White and Asian are awarded the most PhDs in the United States. This disparity has existed for decades. But is it bias?  
 
-By the way, my name is Rembrandt X Einstein, or Remy as my friends call me. I am 
+According to the US Census those who self-indentify as White make up 76.3 percent of the population, and those who self-indentify as Black or African American make up 13.4 percent.
 
-## Rembrandt X Einstein, Remy
+A logical expectation would be that those who self-indentify as White make would be awarded around 76 percent of the PhDs, and those who self-indentify as Black or African American would be awarded around 13 percent. The expectation is called a _model_. The model essentially states that individuals of all races and ethnicities should be awarded PhDs with equal probabilites, so the proporation should reflect the number of tries. 
+If one accepts this model, does the graph indicate bias? According to the [NSF Survey of Earned Doctorates](https://www.nsf.gov/statistics/srvydoctorates/) African Americans are awarded around 5-7 percent of all doctoral degrees to students who are U.S. citizens.  This means one would expect African Americans are awarded around 14 percent, but are actaully awarded around 6 percent. Further in certain fields, expecially STEM fields Blacks are vastly underrepresented among doctoral degree recipients.  
 
-By the way, my name is Rembrandt X Einstein, or Remy as my friends call me. I am 
+ For example, African Americans earned only 1.8 percent of all doctorates, 3.8 percent of all mathematics and statistics doctorates, 3.7 percent of all doctorates in computer science, and only 4.1 percent of all doctorates awarded in engineering disciplines. In 2017, there were more than a dozen fields—largely subfields within science, technology, engineering, and math—in which not a single doctoral degree was awarded to a black person anywhere in the United States.
 
-## Rembrandt X Einstein, Remy
 
-By the way, my name is Rembrandt X Einstein, or Remy as my friends call me. I am 
+## Is Bias Always Bad?
 
-## Rembrandt X Einstein, Remy
+Bias just relfects the inequality of outcome. Sometimes that reflects the reality of the world. Basketball players are biased towards being tall. One reasonable model of the world would be the height helps one play basketball so this makes sense.
 
-By the way, my name is Rembrandt X Einstein, or Remy as my friends call me. I am 
+COVID-19 shows a clear bias with respect to age. Older people are far more likely to die from coronavirus infection.
+
+![Age Bias COVID-19](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/C19_Age_Bias.png)
+
+In spite of a median age of 40 years old in the United States, nearly all of the COVID-19 deaths are 65 and older. There is a large age bias with respect to COVID-19 deaths. While this is, by definition, bias it is not necessarily unfair as one would expect this population to be more vulnerable based on biology. While fairness is related to bias, it is not the same thing.  
+
+
+
+## Bias versus Fairness
+
+Bias is when there are unequal outcomes. Fairness is when the unequal outcomes are undeserved.  For example, if a man and a woman were to apply for to a prestigious company for an artificial intelligence engineering job and the man had a PhD in Computer Science and the woman didn't graaduate college most would not consider that unfair. However, if they both had essentially the same qualifications and were both highly qualified and the man were far more likely to get the job based on the only difference being gender then most would consider that unfair. 
+
+
+
+## Visualizing Ones Own Bias
+
+One can explore this idea of responding to the same input differently based on something immaterial to the outcome or target of interest in order to develop algorithms and visualizations of bias, including understanding ones own bias. For example, if two politicians tweet essentially the same idea and one response depends more on whether the tweeter was liberal or conservative than the content of the tweet that would indicate bias.
+
+We are going to call the variable that is immaterial to the outcome $p$. This would lead to a mathematical expression of fairness as follows: 
+
+
+\begin{equation}  
+    Pr(\hat{y}|p) = Pr(\hat{y}). \tag{Equation 2}  
+\end{equation}
+
+The equation would mean that the probability of the outcome would not be affected by the input $p$.
+
+\begin{equation}  
+    Pr(\hat{salary}|gender) = Pr(\hat{salary}). 
+\end{equation}
+
+For example, ones salary would not be affected by ones gender, but rather other input such as education, years experience, skill level, etc.
+
+## Remy's Taco Bias
+
+Remy and his BFF Angi eat togther but she is a vegan, and Remy is an omnivore. They came up with the following compromise for their dietary schedule.  
+
+* Meatless Monday  
+* Taco Tuesday  
+* Waffle Wednesday   
+* Tofu Thursday   
+* Stir Fryday   
+* Weekend Wheatgrass Juice   
+* Weekend Whisky & Wieners    
+
+Both Remy and Angi express their food sentiment on Twitter.  
 
 ## Introduction
 
