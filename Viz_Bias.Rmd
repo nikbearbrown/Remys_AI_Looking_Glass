@@ -15,6 +15,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Remy's Bias Looking Glass  
 
+## Chapter One - Analysizing Twitter Bias
+
+aaa 
+
 ## Am I Biased?  Creating a Twitter Looking Glass
 
 After tweeting in support of my favorite politician, Dwayne Elizondo Mountain Dew Herbert Camacho, several people responded calling me such names as a snollygoster, a Bieber, a lickspittle, and a ninny. That if I weren't such a tosser and twit I would support Coriolanus Snow.
@@ -115,6 +119,87 @@ Remy and his BFF Angi eat togther but she is a vegan, and Remy is an omnivore. T
 * Weekend Whisky & Wieners    
 
 Both Remy and Angi express their food sentiment on Twitter.  
+
+![Remy and Angi Food Tweets](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Angi_Food_Tweets.png)
+They decided to plot their Twitter food sentiment for a week. To get a baseline they also decided to plot their followers food sentiment for the same period and average those as well.
+
+The sentiment analsyis is pretty straight forward. We classify tweets with a probability of being related to food, accept those which have a very high probability of being food related and then calculate the sentiment of those tweets by summing up the positive, negative, + neutral words and adjust by the length of the tweet.
+ 
+![Sentiment Analysis](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Angi_Food_Tweets.png)
+
+
+## Classifying Food Tweets with Naive Bayes
+
+ We classify tweets with a probability of being related to food using the  Naive Bayes algorithm. [Naive Bayes classifiers](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) are a family of simple probabilistic classifiers based on applying Bayes' theorem with strong (naive) independence assumptions between the features.
+
+Abstractly, naive Bayes is a conditional probability model given a problem instance to be classified, represented by a vector $\mathbf{x} = (x_1, \dots, x_n)$ representing some $n$ features (independent variables), it assigns to this instance probabilities
+
+$$p(C_k \mid x_1, \dots, x_n)\,$$
+
+for each of $k$ possible outcomes or classes $C_k$.
+
+The problem with the above formulation is that if the number of features $n$ is large or if a feature can take on a large number of values, then basing such a model on probability tables is infeasible.  We therefore reformulate the model to make it more tractable.  Using Bayes' theorem, the conditional probability can be decomposed as
+
+$$p(C_k \mid \mathbf{x}) = \frac{p(C_k) \ p(\mathbf{x} \mid C_k)}{p(\mathbf{x})} \,$$
+
+In plain English, using Bayesian probability terminology, the above equation can be written as
+
+$$\mbox{posterior} = \frac{\mbox{prior} \times \mbox{likelihood}}{\mbox{evidence}} \,$$
+
+In practice, there is interest only in the numerator of that fraction, because the denominator does not depend on $C$ and the values of the features $F_i$ are given, so that the denominator is effectively constant.
+The numerator is equivalent to the joint probability model
+
+$$p(C_k, x_1, \dots, x_n)\,$$
+
+which can be rewritten as follows, using the Chain rule for repeated applications of the definition of conditional probability
+
+$$
+\begin{align}
+p(C_k, x_1, \dots, x_n) & = p(x_1, \dots, x_n, C_k) \\
+                        & = p(x_1 \mid x_2, \dots, x_n, C_k) p(x_2, \dots, x_n, C_k) \\
+                        & = p(x_1 \mid x_2, \dots, x_n, C_k) p(x_2 \mid x_3, \dots, x_n, C_k) p(x_3, \dots, x_n, C_k) \\
+                        & = \dots \\
+                        & = p(x_1 \mid x_2, \dots, x_n, C_k) p(x_2 \mid x_3, \dots, x_n, C_k) \dots   p(x_{n-1} \mid x_n, C_k) p(x_n \mid C_k) p(C_k)  \\
+\end{align}
+$$
+
+Now the "naive" conditional independence assumptions come into play assume that each feature $F_i$ is conditionally statistical independence|independent of every other feature $F_j$ for $j\neq i$, given the category $C$.  This means that
+
+$$p(x_i \mid x_{i+1}, \dots ,x_{n}, C_k ) = p(x_i \mid C_k)\,$$.
+
+Thus, the joint model can be expressed as
+
+$$
+\begin{align}
+p(C_k \mid x_1, \dots, x_n) & \varpropto p(C_k, x_1, \dots, x_n) \\
+                            & \varpropto p(C_k) \ p(x_1 \mid C_k) \ p(x_2\mid C_k) \ p(x_3\mid C_k) \ \cdots \\
+                            & \varpropto p(C_k) \prod_{i=1}^n p(x_i \mid C_k)\,.
+\end{align}
+$$
+
+This means that under the above independence assumptions, the conditional distribution over the class variable $C$ is
+
+$$p(C_k \mid x_1, \dots, x_n) = \frac{1}{Z} p(C_k) \prod_{i=1}^n p(x_i \mid C_k)$$
+
+where the evidence $Z = p(\mathbf{x})$ is a scaling factor dependent only on $x_1, \dots, x_n$, that is, a constant if the values of the feature variables are known.
+
+ _Constructing a classifier from the probability model_    
+
+The discussion so far has derived the independent feature model, that is, the naive Bayes probability model.  The naive Bayes classifier combines this model with a decision rule.  One common rule is to pick the hypothesis that is most probable; this is known as the 'maximum a posteriori' or 'MAP' decision rule.  The corresponding classifier, a Bayes classifier, is the function that assigns a class label $\hat{y} = C_k$ for some $k$ as follows
+
+$$\hat{y} = \underset{k \in \{1, \dots, K\}}{\operatorname{argmax}} \ p(C_k) \displaystyle\prod_{i=1}^n p(x_i \mid C_k).$$
+
+## Remy and Angi's Food Sentiment
+
+Remy and Angi's food sentiment is as one would expect.  Remy loves tacos and waffles and is not fond of his veggies.  Angi, a vegan, loves her tofu and greens. 
+
+
+![Twitter Food Sentiment](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Twitter_Food_Sentiment.png)
+
+## Remy and Angi's Political Sentiment
+
+Remy and Angi's food sentiment is as one would expect.  Remy loves tacos and waffles and is not fond of his veggies.  Angi, a vegan, loves her tofu and greens. 
+
 
 ## Introduction
 
