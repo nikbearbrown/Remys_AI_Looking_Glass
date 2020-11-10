@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Nik Bear Brown" />
+
+
+<title>Remy’s Bias Looking Glass - Chapter One</title>
+
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
+<style type="text/css">
+a.anchor-section {margin-left: 10px; visibility: hidden; color: inherit;}
+a.anchor-section::before {content: '#';}
+.hasAnchor:hover a.anchor-section {visibility: visible;}
+</style>
+<script>// Anchor sections v1.0 written by Atsushi Yasumoto on Oct 3rd, 2020.
+document.addEventListener('DOMContentLoaded', function() {
+  // Do nothing if AnchorJS is used
+  if (typeof window.anchors === 'object' && anchors.hasOwnProperty('hasAnchorJSLink')) {
+    return;
+  }
+
+  const h = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+  // Do nothing if sections are already anchored
+  if (Array.from(h).some(x => x.classList.contains('hasAnchor'))) {
+    return null;
+  }
+
+  // Use section id when pandoc runs with --section-divs
+  const section_id = function(x) {
+    return ((x.classList.contains('section') || (x.tagName === 'SECTION'))
+            ? x.id : '');
+  };
+
+  // Add anchors
+  h.forEach(function(x) {
+    const id = x.id || section_id(x.parentElement);
+    if (id === '') {
+      return null;
+    }
+    let anchor = document.createElement('a');
+    anchor.href = '#' + id;
+    anchor.classList = ['anchor-section'];
+    x.classList.add('hasAnchor');
+    x.appendChild(anchor);
+  });
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+border-radius: 3px;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+
+.caption {
+color: #333333;
+  font-style: italic;
+  text-align: center;  
+}
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+<h1 class="title toc-ignore">Remy’s Bias Looking Glass - Chapter One</h1>
+<h4 class="author">Nik Bear Brown</h4>
+<div id="remys-bias-looking-glass" class="section level1">
+<h1>Remy’s Bias Looking Glass</h1>
+<p>Remy’s Bias Looking Glass is a tutorial on analyzing and visualizing bias and fairness on Twitter. The book follows the adventures of Rembrandt X Einstein, Remy, and his partner in crime Angela G Hopper, Angi, as the meander through Twitter Land.</p>
+<p>They are both “AI Skunks,” that is fellows at a think tank of the same name. They are both skunks. Angi is a professor with a PhD in Artificial Intelligence. Remy is an entrepreneur and Tesla-like inventor. In spite of being soul mates in many ways they are opposites. She is a liberal and he is a conservative. She is a little younger and he is a little older. She is female and he is male. She is an atheist and he is spiritual. As a skunk Remy has a little more white than black and Angi has little more black than white. Angi has freckles too, which some skunks look down upon.</p>
+<p>This primar will play with the primary statistics of sentiment analysis and standard statistics for measuring bias. That is the statistical parity difference, equal opportunity difference, average odds difference, disparate impact, Thiel index, partial dependence, and SHAP values.</p>
+<p>The focus of this journey is on how to transform these statistics into data visualizations and to understand bias and how it differs from fairness.</p>
+<div id="chapter-one---twitter-bias-statistics" class="section level2">
+<h2>Chapter One - Twitter Bias Statistics</h2>
+<p>In chapter one Remy and Angi explore the statistics of bias. Later chapters will explain these statistics in more detail. More sophisticated analysis such as partial dependence plots, ICE plots, SHAP force plots, and SHAP summary plots will occur later in the journey.</p>
+</div>
+<div id="am-i-biased-creating-a-twitter-looking-glass" class="section level2">
+<h2>Am I Biased? Creating a Twitter Looking Glass</h2>
+<p>After tweeting in support of Remy’s favorite politician, Mayor McCheese, several people responded calling Remy such names as a snollygoster, a Bieber, a lickspittle, and a ninny. That if Remy weren’t such a tosser and twit he would support Coriolanus Snow.</p>
+<p>Worst of all Remy was accused of being biased and unfair, as he asserted they were. They got into an argument about who is more biased. Rather than argue, Remy decided to investigate. To accomplish this Remy wants to build an AI looking glass which would allow people to visualize bias in writing, in particular in Tweets. The AI looking glass can also be used as a mirror to look at one’s own bias.</p>
+</div>
+<div id="rembrandt-x-einstein-remy" class="section level2">
+<h2>Rembrandt X Einstein, Remy</h2>
+<p>By the way, my name is Rembrandt X Einstein, or Remy as my friends call me. I am an AI researcher and professor at the Smarty Pants Institute. I build predictive models using AI all of the time but sometimes wonder if the predictions they make unfairly affect people. I also wonder what my own biases are. It is time to use math to find out.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Tesla_MacBook_Remy.png" />
+<p class="caption">Rembrandt X Einstein, Remy</p>
+</div>
+</div>
+<div id="can-math-detect-bias" class="section level2">
+<h2>Can Math Detect Bias?</h2>
+<p>Let’s start with a simple definition of bias. If the probability of an outcome is equal given the same inputs then this is unbiased. For example, if two people with the same qualifications have the same probability of getting a job or having the same salary then there is not bias. Conversly, if the probability differs significantly then there is not bias. For example, if two people have the same qualifications (e.g. years experience, education, etc.) they should have the same chance of getting a job.</p>
+<p>In math, we call the outcome variable the target or dependent variable. Convention has a one call the target variable <span class="math inline">\(y\)</span>, and in particalur it is usually called <span class="math inline">\(\hat{y}\)</span> or “y-hat” to indicate is is an estimate or prediction or <span class="math inline">\(y\)</span> as the true <span class="math inline">\(y\)</span> is rarely known. The input variables, thing like years experience, education, techincal skill, etc are called input variables or dependent variables and usually called <span class="math inline">\(X\)</span>, we use a captial <span class="math inline">\(X\)</span> rather than a lower case <span class="math inline">\(x\)</span> to indicate that there can be many input variables, or a vector rather than a single scaler value.</p>
+<p>This leds to one possible mathematical definition of bias.</p>
+<p><span class="math display">\[\begin{equation}  
+    Pr(\hat{y}|X_{A}) = Pr(\hat{y}|X_{B})) \enspace where \enspace X_{A} = X_{B}. \tag{Eq 1}  
+\end{equation}\]</span></p>
+<p>The above reads the probability of y-hat is the same if the inputs are the same. This is a common sense notion, that is there is no bias when the given the same input one gets the same result.</p>
+<p>We will continue to come back to this idea the outcome being different when the relevant input is the same as we continue to refine our exploration of bias and fairness.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Same_Content_Different_Response_Bias.png" />
+<p class="caption">Same Content with a Different Response indicates Bias</p>
+</div>
+</div>
+<div id="can-we-visualize-bias" class="section level2">
+<h2>Can We Visualize Bias?</h2>
+<p>If our notion of bias is disparate outcomes the one should be able to visualize bias. One just needs visualizations that show disparate outcomes in the data.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/PhD_Viz-Bias.png" />
+<p class="caption">Visualizing PhD Bias</p>
+</div>
+<p>The graphic above shows that those who self-indentify as White and Asian are awarded the most PhDs in the United States. This disparity has existed for decades. But is it bias?</p>
+<p>According to the US Census those who self-indentify as White make up 76.3 percent of the population, and those who self-indentify as Black or African American make up 13.4 percent.</p>
+<p>A logical expectation would be that those who self-indentify as White make would be awarded around 76 percent of the PhDs, and those who self-indentify as Black or African American would be awarded around 13 percent. The expectation is called a <em>model</em>. The model essentially states that individuals of all races and ethnicities should be awarded PhDs with equal probabilites, so the proporation should reflect the number of tries. If one accepts this model, does the graph indicate bias? According to the <a href="https://www.nsf.gov/statistics/srvydoctorates/">NSF Survey of Earned Doctorates</a> African Americans are awarded around 5-7 percent of all doctoral degrees to students who are U.S. citizens. This means one would expect African Americans are awarded around 14 percent, but are actaully awarded around 6 percent. Further in certain fields, expecially STEM fields Blacks are vastly underrepresented among doctoral degree recipients.</p>
+<p>For example, African Americans earned only 1.8 percent of all doctorates, 3.8 percent of all mathematics and statistics doctorates, 3.7 percent of all doctorates in computer science, and only 4.1 percent of all doctorates awarded in engineering disciplines. In 2017, there were more than a dozen fields—largely subfields within science, technology, engineering, and math—in which not a single doctoral degree was awarded to a black person anywhere in the United States.</p>
+</div>
+<div id="is-bias-always-bad" class="section level2">
+<h2>Is Bias Always Bad?</h2>
+<p>Bias just relfects the inequality of outcome. Sometimes that reflects the reality of the world. Basketball players are biased towards being tall. One reasonable model of the world would be the height helps one play basketball so this makes sense.</p>
+<p>COVID-19 shows a clear bias with respect to age. Older people are far more likely to die from coronavirus infection.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/C19_Age_Bias.png" />
+<p class="caption">Age Bias COVID-19</p>
+</div>
+<p>In spite of a median age of 40 years old in the United States, nearly all of the COVID-19 deaths are 65 and older. There is a large age bias with respect to COVID-19 deaths. While this is, by definition, bias it is not necessarily unfair as one would expect this population to be more vulnerable based on biology. While fairness is related to bias, it is not the same thing.</p>
+</div>
+<div id="bias-versus-fairness" class="section level2">
+<h2>Bias versus Fairness</h2>
+<p>Bias is when there are unequal outcomes. Fairness is when the unequal outcomes are undeserved. For example, if a man and a woman were to apply for to a prestigious company for an artificial intelligence engineering job and the man had a PhD in Computer Science and the woman didn’t graaduate college most would not consider that unfair. However, if they both had essentially the same qualifications and were both highly qualified and the man were far more likely to get the job based on the only difference being gender then most would consider that unfair.</p>
+</div>
+<div id="visualizing-ones-own-bias" class="section level2">
+<h2>Visualizing Ones Own Bias</h2>
+<p>One can explore this idea of responding to the same input differently based on something immaterial to the outcome or target of interest in order to develop algorithms and visualizations of bias, including understanding ones own bias. For example, if two politicians tweet essentially the same idea and one response depends more on whether the tweeter was liberal or conservative than the content of the tweet that would indicate bias.</p>
+<p>We are going to call the variable that is immaterial to the outcome <span class="math inline">\(p\)</span>. This would lead to a mathematical expression of fairness as follows:</p>
+<p><span class="math display">\[\begin{equation}  
+    Pr(\hat{y}|p) = Pr(\hat{y}). \tag{Equation 2}  
+\end{equation}\]</span></p>
+<p>The equation would mean that the probability of the outcome would not be affected by the input <span class="math inline">\(p\)</span>.</p>
+<p><span class="math display">\[\begin{equation}  
+    Pr(\hat{salary}|gender) = Pr(\hat{salary}). 
+\end{equation}\]</span></p>
+<p>For example, ones salary would not be affected by ones gender, but rather other input such as education, years experience, skill level, etc.</p>
+</div>
+<div id="remys-taco-bias" class="section level2">
+<h2>Remy’s Taco Bias</h2>
+<p>Remy and his BFF Angi eat togther but she is a vegan, and Remy is an omnivore. They came up with the following compromise for their dietary schedule.</p>
+<ul>
+<li>Meatless Monday<br />
+</li>
+<li>Taco Tuesday<br />
+</li>
+<li>Waffle Wednesday<br />
+</li>
+<li>Tofu Thursday<br />
+</li>
+<li>Stir Fryday<br />
+</li>
+<li>Weekend Wheatgrass Juice<br />
+</li>
+<li>Weekend Whisky &amp; Wieners</li>
+</ul>
+<p>Both Remy and Angi express their food sentiment on Twitter.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Angi_Food_Tweets.png" />
+<p class="caption">Remy and Angi Food Tweets</p>
+</div>
+<p>They decided to plot their Twitter food sentiment for a week. To get a baseline they also decided to plot their followers food sentiment for the same period and average those as well.</p>
+<p>The sentiment analsyis is pretty straight forward. We classify tweets with a probability of being related to food, accept those which have a very high probability of being food related and then calculate the sentiment of those tweets by summing up the positive, negative, + neutral words and adjust by the length of the tweet.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Sentiment_Tweets.png" />
+<p class="caption">Sentiment Analysis</p>
+</div>
+</div>
+<div id="classifying-food-tweets-with-naive-bayes" class="section level2">
+<h2>Classifying Food Tweets with Naive Bayes</h2>
+<p>We classify tweets with a probability of being related to food using the Naive Bayes algorithm. <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifiers</a> are a family of simple probabilistic classifiers based on applying Bayes’ theorem with strong (naive) independence assumptions between the features.</p>
+<p>Abstractly, naive Bayes is a conditional probability model given a problem instance to be classified, represented by a vector <span class="math inline">\(\mathbf{x} = (x_1, \dots, x_n)\)</span> representing some <span class="math inline">\(n\)</span> features (independent variables), it assigns to this instance probabilities</p>
+<p><span class="math display">\[p(C_k \mid x_1, \dots, x_n)\,\]</span></p>
+<p>for each of <span class="math inline">\(k\)</span> possible outcomes or classes <span class="math inline">\(C_k\)</span>.</p>
+<p>The problem with the above formulation is that if the number of features <span class="math inline">\(n\)</span> is large or if a feature can take on a large number of values, then basing such a model on probability tables is infeasible. We therefore reformulate the model to make it more tractable. Using Bayes’ theorem, the conditional probability can be decomposed as</p>
+<p><span class="math display">\[p(C_k \mid \mathbf{x}) = \frac{p(C_k) \ p(\mathbf{x} \mid C_k)}{p(\mathbf{x})} \,\]</span></p>
+<p>In plain English, using Bayesian probability terminology, the above equation can be written as</p>
+<p><span class="math display">\[\mbox{posterior} = \frac{\mbox{prior} \times \mbox{likelihood}}{\mbox{evidence}} \,\]</span></p>
+<p>In practice, there is interest only in the numerator of that fraction, because the denominator does not depend on <span class="math inline">\(C\)</span> and the values of the features <span class="math inline">\(F_i\)</span> are given, so that the denominator is effectively constant. The numerator is equivalent to the joint probability model</p>
+<p><span class="math display">\[p(C_k, x_1, \dots, x_n)\,\]</span></p>
+<p>which can be rewritten as follows, using the Chain rule for repeated applications of the definition of conditional probability</p>
+<p><span class="math display">\[
+\begin{align}
+p(C_k, x_1, \dots, x_n) &amp; = p(x_1, \dots, x_n, C_k) \\
+                        &amp; = p(x_1 \mid x_2, \dots, x_n, C_k) p(x_2, \dots, x_n, C_k) \\
+                        &amp; = p(x_1 \mid x_2, \dots, x_n, C_k) p(x_2 \mid x_3, \dots, x_n, C_k) p(x_3, \dots, x_n, C_k) \\
+                        &amp; = \dots \\
+                        &amp; = p(x_1 \mid x_2, \dots, x_n, C_k) p(x_2 \mid x_3, \dots, x_n, C_k) \dots   p(x_{n-1} \mid x_n, C_k) p(x_n \mid C_k) p(C_k)  \\
+\end{align}
+\]</span></p>
+<p>Now the “naive” conditional independence assumptions come into play assume that each feature <span class="math inline">\(F_i\)</span> is conditionally statistical independence|independent of every other feature <span class="math inline">\(F_j\)</span> for <span class="math inline">\(j\neq i\)</span>, given the category <span class="math inline">\(C\)</span>. This means that</p>
+<p><span class="math display">\[p(x_i \mid x_{i+1}, \dots ,x_{n}, C_k ) = p(x_i \mid C_k)\,\]</span>.</p>
+<p>Thus, the joint model can be expressed as</p>
+<p><span class="math display">\[
+\begin{align}
+p(C_k \mid x_1, \dots, x_n) &amp; \varpropto p(C_k, x_1, \dots, x_n) \\
+                            &amp; \varpropto p(C_k) \ p(x_1 \mid C_k) \ p(x_2\mid C_k) \ p(x_3\mid C_k) \ \cdots \\
+                            &amp; \varpropto p(C_k) \prod_{i=1}^n p(x_i \mid C_k)\,.
+\end{align}
+\]</span></p>
+<p>This means that under the above independence assumptions, the conditional distribution over the class variable <span class="math inline">\(C\)</span> is</p>
+<p><span class="math display">\[p(C_k \mid x_1, \dots, x_n) = \frac{1}{Z} p(C_k) \prod_{i=1}^n p(x_i \mid C_k)\]</span></p>
+<p>where the evidence <span class="math inline">\(Z = p(\mathbf{x})\)</span> is a scaling factor dependent only on <span class="math inline">\(x_1, \dots, x_n\)</span>, that is, a constant if the values of the feature variables are known.</p>
+<p><em>Constructing a classifier from the probability model</em></p>
+<p>The discussion so far has derived the independent feature model, that is, the naive Bayes probability model. The naive Bayes classifier combines this model with a decision rule. One common rule is to pick the hypothesis that is most probable; this is known as the ‘maximum a posteriori’ or ‘MAP’ decision rule. The corresponding classifier, a Bayes classifier, is the function that assigns a class label <span class="math inline">\(\hat{y} = C_k\)</span> for some <span class="math inline">\(k\)</span> as follows</p>
+<p><span class="math display">\[\hat{y} = \underset{k \in \{1, \dots, K\}}{\operatorname{argmax}} \ p(C_k) \displaystyle\prod_{i=1}^n p(x_i \mid C_k).\]</span></p>
+</div>
+<div id="remy-and-angis-food-sentiment" class="section level2">
+<h2>Remy and Angi’s Food Sentiment</h2>
+<p>Remy and Angi’s food sentiment is as one would expect. Remy loves tacos and waffles and is not fond of his veggies. Angi, a vegan, loves her tofu and greens.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Twitter_Food_Sentiment.png" />
+<p class="caption">Twitter Food Sentiment</p>
+</div>
+</div>
+<div id="remys-and-angis-political-sentiment" class="section level2">
+<h2>Remy’s and Angi’s Political Sentiment</h2>
+<p>Remy’s and Angi’s food sentiment is as one would expect. Remy loves tacos and waffles and is not fond of his veggies. Angi, a vegan, loves her tofu and greens. While this food preference is a bias it rarely leads to arguments.</p>
+<p>What about their politics? In spite of being soul mates in many ways they are opposites. She is a liberal and he is a conservative. While they rarely argue over food they often argue over politcs.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Angi_Political_Sentiment.png" />
+<p class="caption">Remy’s and Angi’s Political Sentiment</p>
+</div>
+<pre>
+</pre>
+<p><h3>Remi’s + Angi’s Political Tweets ~ Aggregate Sentiment</h3></p>
+<p><img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/RnA_Aggregate_Sentiment.png" />
+<p>Remi seems postive, Angi seems negative and their followers seem neutral in aggregate. </p>
+
+<pre>
+</pre>
+<p><h3>Remy’s Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)</h3></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Conditional_Sentiment.png" />
+<p class="caption">Remys Conservative and Liberal Political Tweets</p>
+</div>
+<p>Remi tends to be postive in aggregate, but is very positive for conservative tweets, and skews negative for liberal tweets. The difference in sentiment for conservative versus liberal tweets is significant for Remi, showing bias. Friday, October 23 is a rare day when Remy shows little political bias.</p>
+
+<pre>
+</pre>
+<p><h3>Angi’s Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)</h3></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Angi_Conditional_Sentiment.png" />
+<p class="caption">Angis Conservative and Liberal Political Tweets</p>
+</div>
+<p>Angi tends to be negative in aggregate. The difference in sentiment for conservative versus liberal tweets is much less for Angi, showing less bias. On Halloween, Angi is more conservative than liberal.</p>
+<pre>
+</pre>
+<p><h3>Remy’s + Angi’s Followers Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)</h3></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Followers_Conditional_Sentiment.png" />
+<p class="caption">Remys + Angis Followers Conservative and Liberal Political Tweets</p>
+</div>
+<p>On Average Remy’s + Angi’s followers seem neutral. However, when conditioned on political affiliation, there seem to be two highly biased groups whose average is neutral. That neutrality is an illusion.</p>
+</div>
+<div id="what-is-next" class="section level2">
+<h2>What is Next?</h2>
+<p>In our next adventure we will look into the difference between bias and fairness. Remy and Angi will try to understand <em>fairness</em> and <em>discrimination</em>. Discrimination is the unequal treatment of individuals of certain groups, resulting in members of one group being deprived of benefits or opportunities. Common groups that suffer discrimination include those based on age, gender, skin color, religion, race, language, culture, marital status, or economic condition.</p>
+<p>Remy and Angi study the statistics of <em>fairness</em> and <em>discrimination</em> including statistical parity difference, equal opportunity difference, average odds difference, disparate impact, and the Thiel index.</p>
+
+
+<pre>
+
+
+
+
+
+
+</pre>
+<p>
+
+
+
+</p>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
