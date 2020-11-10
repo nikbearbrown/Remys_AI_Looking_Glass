@@ -126,7 +126,10 @@ Remy and his BFF Angi eat togther but she is a vegan, and Remy is an omnivore. T
 
 Both Remy and Angi express their food sentiment on Twitter.  
 
+
 ![Remy and Angi Food Tweets](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Angi_Food_Tweets.png)
+
+
 They decided to plot their Twitter food sentiment for a week. To get a baseline they also decided to plot their followers food sentiment for the same period and average those as well.
 
 The sentiment analsyis is pretty straight forward. We classify tweets with a probability of being related to food, accept those which have a very high probability of being food related and then calculate the sentiment of those tweets by summing up the positive, negative, + neutral words and adjust by the length of the tweet.
@@ -196,7 +199,8 @@ $$\hat{y} = \underset{k \in \{1, \dots, K\}}{\operatorname{argmax}} \ p(C_k) \di
 
 ## Remy and Angi's Food Sentiment
 
-Remy and Angi's food sentiment is as one would expect.  Remy loves tacos and waffles and is not fond of his veggies.  Angi, a vegan, loves her tofu and greens. 
+Remy and Angi's food sentiment is as one would expect.  Remy loves tacos and waffles and is not fond of his veggies.  Angi, a vegan, loves her tofu and greens.   
+
 
 ![Twitter Food Sentiment](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Twitter_Food_Sentiment.png)
 
