@@ -3,9 +3,9 @@ title: "Remy's Bias Looking Glass - Chapter One"
 author: "Nik Bear Brown"
 date: "11/6/2020"
 output:
+  rmarkdown::html_vignette: default
   word_document: default
   html_document: default
-  rmarkdown::html_vignette: default
 ---
 
 
@@ -38,7 +38,7 @@ Worst of all Remy was accused of being biased and unfair, as he asserted they we
 
 By the way, my name is Rembrandt X Einstein, or Remy as my friends call me. I am an AI researcher and professor at the Smarty Pants Institute. I build predictive models using AI all of the time but sometimes wonder if the predictions they make unfairly affect people. I also wonder what my own biases are. It is time to use math to find out. 
 
-![Tesla MacBook Remy](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Tesla_MacBook_Remy.png)
+![Rembrandt X Einstein, Remy](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Tesla_MacBook_Remy.png)
 
 
 ## Can Math Detect Bias?
@@ -64,7 +64,7 @@ We will continue to come back to this idea the outcome being different when the 
 
 If our notion of bias is disparate outcomes the one should be able to visualize bias. One just needs visualizations that show disparate outcomes in the data.  
 
-![PhD Bias](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/PhD_Viz-Bias.png)
+![Visualizing PhD Bias](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/PhD_Viz-Bias.png)
 
 The graphic above shows that those who self-indentify as White and Asian are awarded the most PhDs in the United States. This disparity has existed for decades. But is it bias?  
 
@@ -91,7 +91,6 @@ In spite of a median age of 40 years old in the United States, nearly all of the
 ## Bias versus Fairness
 
 Bias is when there are unequal outcomes. Fairness is when the unequal outcomes are undeserved.  For example, if a man and a woman were to apply for to a prestigious company for an artificial intelligence engineering job and the man had a PhD in Computer Science and the woman didn't graaduate college most would not consider that unfair. However, if they both had essentially the same qualifications and were both highly qualified and the man were far more likely to get the job based on the only difference being gender then most would consider that unfair. 
-
 
 
 ## Visualizing Ones Own Bias
@@ -212,26 +211,27 @@ What about their politics? In spite of being soul mates in many ways they are op
 _Remi's + Angi's Political Tweets  ~ Aggregate Sentiment_  
 
 ![Remis + Angi's Political Tweets  ~ Aggregate Sentiment](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/RnA_Aggregate_Sentiment.png)
+Remy seems to skew postive, Angi is a bit negative and their followers seem to be fairly neutral.
 
 _Remy's Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)_   
 
-![Remys Conservative and Liberal Political Tweets)(https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Conditional_Sentiment.png)
+![Remys Conservative and Liberal Political Tweets](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Conditional_Sentiment.png)
 
-
-and Liberal Politic
+Remi tends to be postive in aggregate, but is very positive for conservative tweets, and skews negative for liberal tweets. The difference in sentiment for conservative versus liberal tweets is significant for Remi, showing bias. Friday, October 23 is a rare day when Remy shows little political bias.
 
 _Angi's Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)_   
 
 ![Angis Conservative and Liberal Political Tweets](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Angi_Conditional_Sentiment.png)
 
-Angi's Conservativervative)
+Angi tends to be negative in aggregate. The difference in sentiment for conservative versus liberal tweets is much less for Angi, showing less bias. On Halloween, Angi is more conservative than liberal.  
+
 
 _Remy's + Angi's Followers Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)_
 
 ![Remys + Angis Followers Conservative and Liberal Political Tweets](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Followers_Conditional_Sentiment.png)
 
 
-Remy's + Angi's Followers Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)
+On Average Remy's + Angi's followers seem neutral. However, when conditioned on political affiliation, there seem to be two highly biased groups whose average is neutral. That neutrality is an illusion.  
 
 
 ## What is Next?
