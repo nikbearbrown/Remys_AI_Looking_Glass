@@ -207,7 +207,31 @@ Remy's and Angi's food sentiment is as one would expect.  Remy loves tacos and w
 
 What about their politics? In spite of being soul mates in many ways they are opposites. She is a liberal and he is a conservative. While they rarely argue over food they often argue over politcs.
 
-![Remy's and Angi's Political Sentiment](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Twitter_Food_Sentiment.png)
+![Remy's and Angi's Political Sentiment](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Angi_Political_Sentiment.png)
+
+_Remi's + Angi's Political Tweets  ~ Aggregate Sentiment_  
+
+![Remis + Angi's Political Tweets  ~ Aggregate Sentiment](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/RnA_Aggregate_Sentiment.png)
+
+_Remy's Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)_   
+
+![Remys Conservative and Liberal Political Tweets)(https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Remy_Conditional_Sentiment.png)
+
+
+and Liberal Politic
+
+_Angi's Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)_   
+
+![Angis Conservative and Liberal Political Tweets](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Angi_Conditional_Sentiment.png)
+
+Angi's Conservativervative)
+
+_Remy's + Angi's Followers Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)_
+
+![Remys + Angis Followers Conservative and Liberal Political Tweets](https://raw.githubusercontent.com/nikbearbrown/Remys_AI_Looking_Glass/main/images/Followers_Conditional_Sentiment.png)
+
+
+Remy's + Angi's Followers Conservative and Liberal Political Tweets ~ Conditional(Sentiment|Conservative)
 
 
 ## What is Next?
